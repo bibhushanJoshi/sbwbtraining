@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.MO", "com.lftechnology.sbworkbench.training.manageorganization.service", "manageOrganization-portlet");

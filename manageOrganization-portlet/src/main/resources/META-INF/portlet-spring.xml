@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.lftechnology.sbworkbench.training.manageorganization.service.departmentLocalService" class="com.lftechnology.sbworkbench.training.manageorganization.service.impl.departmentLocalServiceImpl" />
+	<bean id="com.lftechnology.sbworkbench.training.manageorganization.service.departmentService" class="com.lftechnology.sbworkbench.training.manageorganization.service.impl.departmentServiceImpl" />
+	<bean id="com.lftechnology.sbworkbench.training.manageorganization.service.persistence.departmentPersistence" class="com.lftechnology.sbworkbench.training.manageorganization.service.persistence.departmentPersistenceImpl" parent="basePersistence" />
+</beans>

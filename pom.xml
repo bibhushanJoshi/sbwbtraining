@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lftechnology.sbworkbench.training.manageorganization</groupId>
 	<artifactId>ManageOrganization</artifactId>
@@ -9,13 +10,13 @@
 	<version>ver1.0.0</version>
 
 	<properties>
-			<liferay.version>6.1.2</liferay.version>
-			<liferay.maven.plugin.version>6.1.2</liferay.maven.plugin.version>
-			<liferay.auto.deploy.dir>${env.LIFERAY_DEPLOY_DIR}</liferay.auto.deploy.dir>
-			<liferay.app.server.deploy.dir>/home/bibhushan/codehome/tools/liferay-tools/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps</liferay.app.server.deploy.dir>
-		<liferay.app.server.lib.global.dir>/home/bibhushan/codehome/tools/liferay-tools/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/lib/ext</liferay.app.server.lib.global.dir>
-		<liferay.app.server.portal.dir>/home/bibhushan/codehome/tools/liferay-tools/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40/webapps/ROOT</liferay.app.server.portal.dir>
-		</properties>
+		<liferay.version>6.1.2</liferay.version>
+		<liferay.maven.plugin.version>6.1.2</liferay.maven.plugin.version>
+		<liferay.auto.deploy.dir>${env.LIFERAY_AUTO_DEPLOY_DIR}</liferay.auto.deploy.dir>
+		<liferay.app.server.deploy.dir>${env.LIFERAY_SERVER_DEPLOY_DIR}</liferay.app.server.deploy.dir>
+		<liferay.app.server.lib.global.dir>${env.LIFERAY_SERVER_GLOBAL_DIR}</liferay.app.server.lib.global.dir>
+		<liferay.app.server.portal.dir>${env.LIFERAY_SERVER_PORTAL_DIR}</liferay.app.server.portal.dir>
+	</properties>
 
 	<build>
 		<plugins>

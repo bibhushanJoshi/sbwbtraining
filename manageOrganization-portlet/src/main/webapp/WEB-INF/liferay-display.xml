@@ -3,4 +3,7 @@
 
 <display>
 	
+	<category name="SBWB">
+		<portlet id="manage-organization"></portlet>
+	</category>
 </display>
