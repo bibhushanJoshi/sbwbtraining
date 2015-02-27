@@ -265,6 +265,19 @@ public class departmentLocalServiceWrapper implements departmentLocalService,
         return _departmentLocalService.getEveryDepartments();
     }
 
+    public com.lftechnology.sbworkbench.training.manageorganization.model.department addUpdateDepartment(
+        com.lftechnology.sbworkbench.training.manageorganization.model.department department)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return _departmentLocalService.addUpdateDepartment(department);
+    }
+
+    public void deleteDepartment(long departmentId)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        _departmentLocalService.deleteDepartment(departmentId);
+    }
+
     /**
      * @deprecated Renamed to {@link #getWrappedService}
      */

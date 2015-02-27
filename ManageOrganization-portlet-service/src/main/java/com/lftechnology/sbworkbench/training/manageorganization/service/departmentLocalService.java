@@ -241,4 +241,13 @@ public interface departmentLocalService extends BaseLocalService,
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public java.util.List<com.lftechnology.sbworkbench.training.manageorganization.model.department> getEveryDepartments()
         throws com.liferay.portal.kernel.exception.SystemException;
+
+    public com.lftechnology.sbworkbench.training.manageorganization.model.department addUpdateDepartment(
+        com.lftechnology.sbworkbench.training.manageorganization.model.department department)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    public void deleteDepartment(long departmentId)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException;
 }

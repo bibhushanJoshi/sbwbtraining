@@ -5,5 +5,9 @@
 	
 	<category name="SBWB">
 		<portlet id="manage-organization"></portlet>
+		<portlet id="add-department"></portlet>
+	</category>
+	<category name="category.sample">
+		
 	</category>
 </display>

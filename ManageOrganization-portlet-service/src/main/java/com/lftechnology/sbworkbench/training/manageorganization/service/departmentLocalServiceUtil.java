@@ -270,6 +270,19 @@ public class departmentLocalServiceUtil {
         return getService().getEveryDepartments();
     }
 
+    public static com.lftechnology.sbworkbench.training.manageorganization.model.department addUpdateDepartment(
+        com.lftechnology.sbworkbench.training.manageorganization.model.department department)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().addUpdateDepartment(department);
+    }
+
+    public static void deleteDepartment(long departmentId)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        getService().deleteDepartment(departmentId);
+    }
+
     public static void clearService() {
         _service = null;
     }

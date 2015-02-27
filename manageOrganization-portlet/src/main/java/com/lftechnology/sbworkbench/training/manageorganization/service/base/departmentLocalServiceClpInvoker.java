@@ -44,6 +44,10 @@ public class departmentLocalServiceClpInvoker {
     private String[] _methodParameterTypes39;
     private String _methodName44;
     private String[] _methodParameterTypes44;
+    private String _methodName45;
+    private String[] _methodParameterTypes45;
+    private String _methodName46;
+    private String[] _methodParameterTypes46;
 
     public departmentLocalServiceClpInvoker() {
         _methodName0 = "adddepartment";
@@ -139,6 +143,16 @@ public class departmentLocalServiceClpInvoker {
         _methodName44 = "getEveryDepartments";
 
         _methodParameterTypes44 = new String[] {  };
+
+        _methodName45 = "addUpdateDepartment";
+
+        _methodParameterTypes45 = new String[] {
+                "com.lftechnology.sbworkbench.training.manageorganization.model.department"
+            };
+
+        _methodName46 = "deleteDepartment";
+
+        _methodParameterTypes46 = new String[] { "long" };
     }
 
     public Object invokeMethod(String name, String[] parameterTypes,
@@ -245,6 +259,18 @@ public class departmentLocalServiceClpInvoker {
         if (_methodName44.equals(name) &&
                 Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
             return departmentLocalServiceUtil.getEveryDepartments();
+        }
+
+        if (_methodName45.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes45, parameterTypes)) {
+            return departmentLocalServiceUtil.addUpdateDepartment((com.lftechnology.sbworkbench.training.manageorganization.model.department) arguments[0]);
+        }
+
+        if (_methodName46.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
+            departmentLocalServiceUtil.deleteDepartment(((Long) arguments[0]).longValue());
+
+            return null;
         }
 
         throw new UnsupportedOperationException();

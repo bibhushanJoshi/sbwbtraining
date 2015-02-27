@@ -27,7 +27,7 @@ public class ActionUtils {
 		JSONObject cell = null;
 		JSONArray recordsjsonArray = JSONFactoryUtil.createJSONArray();
 		recordsjsonObject.put("page", "1");
-		double total_pages = Math.ceil(objectList.size() / 5.0);
+		double total_pages = Math.ceil(objectList.size() / 10.0);
 		recordsjsonObject.put("total", String.valueOf(total_pages));
 		recordsjsonObject.put("records ", String.valueOf(objectList.size()));
 		if (!objectList.isEmpty()) {

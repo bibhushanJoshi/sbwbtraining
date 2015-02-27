@@ -5,37 +5,50 @@
 	<portlet:param name="jspPage" value="/html/jqgridaction/form.jsp"></portlet:param>
 </portlet:resourceURL> --%>
 <portlet:actionURL name="update" var="updates" />
+<portlet:actionURL name="editOrDeleteDepartment" var="editDepartment" />
+<portlet:actionURL name="deleteDepartment" var="deleteDepartment" />
+<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui"%>
 <portlet:resourceURL var="serve"></portlet:resourceURL>
+<portlet:actionURL name="addNewDepartment" var="addDepartment" />
 <portlet:defineObjects />
+<div class="form-wrapper cfix">
+	<div class="wrapper-display">
+		<h1 class="add-title">Available Departments</h1>
+		<table id="jqGrid"></table>
+		<div id="jqGridPager"></div>
+	</div>
+	<div class="wrapper-add">
+		<h1 class="add-title">Add your own Department</h1>
+		<aui:form action="<%=addDepartment.toString()%>" method="post">
+			<aui:fieldset>
+				<aui:input name="departmentName" size="45" />
+				<aui:button-row>
+					<aui:button value="Add" type="submit" />
+				</aui:button-row>
+			</aui:fieldset>
+		</aui:form>
+	</div>
+</div>
 
-<table id="jqGrid"></table>
-<div id="jqGridPager"></div>
-<!-- 
-<div id="pager3"></div>
-<table id="navgrid"></table>
-<div id="pagernav"></div> -->
-<%
-	//JSONObject obj = (JSONObject)renderRequest.getAttribute("df");
-%>
-jhgjh
 <script>
-/* var sd = {"total":"0.0","page":"1","records ":"2",
-		"rows":[{ departmentId: "1", departmentName: "2007-10-01",createdBy:"dksljf",createdOn:"asdas"}]}; */
-
 
 jQuery("#jqGrid").jqGrid({
 	url:'${serve}',
-	editurl:'${updates}',
+	editurl:'${editDepartment}',
     datatype: 'json',
     edit: true, add: true, del: true,
+    postData: {ids:23} ,
     colNames:['id', 'department', 'created by','Created On','CompanyId','GroupId','Actions'],
     colModel:[
-    {name:'departmentId',index:'departmentId', width:60,align:"center", sorttype:"int", editable: true},
-    {name:'departmentName',index:'departmentName',align:"left", width:310, editable: true},
-    {name:'createdBy',index:'createdBy', width:80, align:"center", editable: true},
-    {name:'createdOn',index:'createdOn', width:80, align:"center", editable: true},
-    {name:'companyId',index:'companyId', width:80,align:"center",sorttype:"float", editable: true},
-    {name:'groupId',index:'groupId', width:80,align:"center", sortable:false, editable: true},{
+    {name:'departmentId',index:'departmentId', width:60,align:"center", sorttype:"int",key:true},
+    {name:'departmentName',index:'departmentName',align:"left", width:310, editable: true,
+    	editrules: {
+    	    required: true}
+        },
+    {name:'createdBy',index:'createdBy', width:125, align:"center", editable: false},
+    {name:'createdOn',index:'createdOn', width:120, align:"center", editable: false},
+    {name:'companyId',index:'companyId', width:120,align:"center",sorttype:"float", editable: false},
+    {name:'groupId',index:'groupId', width:120,align:"center", sortable:false, editable: false},{
 		label: "Edit Actions",
         name: "actions",
         width: 50,
@@ -50,14 +63,16 @@ jQuery("#jqGrid").jqGrid({
     }
     ],
     height:'auto',
-    rowNum:5,
+    rowNum:10,
     sortname: 'departmentId',
     viewrecords: true,
     sortorder: "desc",
     loadonce: true,
     pager:'#jqGridPager'
-},{closeAfterEdit:true},{url:'${updates}',closeAfterAdd: true},{},{});
-$('#jqGrid').navGrid("#jqGridPager", {edit: false, add: true});
+},{},{},{},{});
+		
+		
+/* $('#jqGrid').navGrid("#jqGridPager", {edit: false, add: true}); */
 /* $('#jqGrid').inlineNav('#jqGridPager',
     // the buttons to appear on the toolbar of the grid
     { 
